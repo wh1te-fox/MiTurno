@@ -1,2 +1,12 @@
 # MiTurno
-Automatiza los procesos de registro, seguimiento de pacientes y programación de citas médicas en hospitales públicos de Nicaragua. Agiliza la atención médica, reduce aglomeraciones y mejora la experiencia del paciente y la eficiencia operativa del sistema hospitalario.
+
+
+![Status](https://img.shields.io/badge/status-in--development-yellow) 
+
+Automatizar los procesos de registro, seguimiento de pacientes y programación de citas médicas en los hospitales públicos de Nicaragua.
+
+## Funciones Principales
+|Pacientes|Personal Admininstrativo|
+|---|---|
+|Registros ágiles|Gestion de citas|
+
