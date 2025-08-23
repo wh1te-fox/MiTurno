@@ -2,7 +2,7 @@
 
 <p align = "center">
   <img
-  src = "MiTurno/logoMi.png"
+  src = "img/logoMi.png"
   alt = "logo"/>
 </p>
 
