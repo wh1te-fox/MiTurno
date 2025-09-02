@@ -1,0 +1,42 @@
+/*estilo, pagina principal*/
+
+html {
+    background-color: #282828; /*color de fondo*/
+    background-repeat: no-repeat;
+    background-attachment: scroll; /*desaparecer en el scroll*/
+    background-size: 200px 200px; /*amplitud*/
+}
+
+h1 {
+  font-size: 40px;
+  text-align: start; /*posicion*/
+}
+
+.header { /*id barra tambien es permitido*/
+    display: flex; /*agrupar elementos*/
+    align-items: center; /* Alinea el contenido verticalmente */
+    justify-content: flex-start;  /* Alinea el contenido a la izquierda */
+    color: #00d5a0;
+    z-index: 10; /*encima del fondo*/
+}
+
+
+.seccion {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.5)), /* Degradado semitransparente */
+    url(../html/img/found.png);
+  color: white;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover; /* Esto hace que la imagen cubra todo el elemento */
+  background-position: center; /* Centra la imagen */
+  width: 100vw; 
+  height: 100vh;
+  display: flex; /* Necesario para align-items y justify-content */
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* Elimina márgenes predeterminados del párrafo */
+  padding: 0; /* Elimina relleno predeterminado */
+  
+}

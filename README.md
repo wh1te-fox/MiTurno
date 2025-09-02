@@ -17,3 +17,4 @@ Automatizar los procesos de registro, seguimiento de pacientes y programación d
 |---|---|
 |Registros ágiles|Gestion de citas|
 
+paleta de colores y tipo de letras
