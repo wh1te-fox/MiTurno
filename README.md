@@ -17,4 +17,24 @@ Automatizar los procesos de registro, seguimiento de pacientes y programación d
 |---|---|
 |Registros ágiles|Gestion de citas|
 
-paleta de colores y tipo de letras
+
+--- 
+
+## Estructura del proyecto 
+
+
+```
+MiTurno
+├─ Code
+│  ├─ css
+│  │  └─ style.css
+│  └─ html
+│     ├─ img
+│     │  ├─ found.png
+│     │  └─ logoMI.png
+│     └─ index.html
+├─ README.md
+└─ img
+   └─ logoMI.png
+
+```
