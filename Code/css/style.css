@@ -11,7 +11,47 @@ html {
     background-size: 200px 200px; /*amplitud*/
 }
 
-/*Encabezado*/
+/*Barra de navegacion*/
+
+header { /*id barra tambien es permitido*/
+    display: flex; /*agrupar elementos de manera horizontal*/
+    align-items: center; /* Alinea el contenido verticalmente */
+    justify-content: flex-start;  /* Alinea el contenido a la izquierda */
+    color: #00d5a0;
+    z-index: 10; /*encima del fondo*/
+    margin-left: 50px;
+}
+
+/*Contenido de Navegacion*/
+
+.acciones {
+  color: white;
+  flex-direction: column-reverse;
+  /*position: fixed; - esto en en verical*/ 
+  display:grid; /*qhace que los elementos se alinien en horizontal*/
+  margin-right: 30px;
+  margin-left: 1200px;
+    
+}
+
+/*boton de registro*/
+.registro {
+  color: white;
+  background-color: #282828;
+  border-radius: 5px;
+  /*border-color: aquamarine;*/
+}
+.registro:active { /*al precionar*/
+  color: #000;
+  background-color: #00d5a0;
+}
+
+.registro:hover {
+  color: black;
+  background-color: #85ecd3;
+}
+
+/*Contenido de la web*/
 .des1 {
   font-size: 30px;
   text-align: start; /*posicion*/
@@ -25,29 +65,7 @@ html {
   font-family: 'Abel', sans-serif;
 }
 
-.acciones {
-  color: white;
-  flex-direction: column-reverse;
-  /*position: fixed; - esto en en verical*/ 
-  display:grid; /*qhace que los elementos se alinien en horizontal*/
-
-  grid-template-columns: repeat(4,auto);
-
-  margin-right: 30px;
-  margin-left: 1200px;
-    
-}
-
-.header { /*id barra tambien es permitido*/
-    display: flex; /*agrupar elementos de manera horizontal*/
-    align-items: center; /* Alinea el contenido verticalmente */
-    justify-content: flex-start;  /* Alinea el contenido a la izquierda */
-    color: #00d5a0;
-    z-index: 10; /*encima del fondo*/
-    margin-left: 50px;
-}
-
-
+/*fondo principal*/
 .seccion {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5),
   rgba(0, 0, 0, 0.5)), /* Degradado semitransparente */
@@ -70,7 +88,7 @@ html {
   font-size: 50px;
 }
 
-
+/*Margenes de texto*/
 .box {
   font-size: 40px;
   margin-left: 50px; /*Margenes a la izquierda*/
@@ -87,6 +105,7 @@ html {
   align-items: start;
   border-radius: px;
   font-family: 'Abel', sans-serif;
+  background: rgba(245, 246, 248, 0.75);
   /*border: 2px solid #00d5a0*/
 } /*configuracion inicial del boton*/
 
@@ -102,22 +121,6 @@ background-color: #85ecd3;
 
 .colaboracion {
   color: white;
-}
-
-.registro {
-  color: white;
-  background-color: #282828;
-  border-radius: 5px;
-  /*border-color: aquamarine;*/
-}
-.registro:active { /*al precionar*/
-  color: #000;
-  background-color: #00d5a0;
-}
-
-.registro:hover {
-  color: black;
-  background-color: #85ecd3;
 }
 
 .colaboracion {
