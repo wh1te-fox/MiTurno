@@ -16,38 +16,47 @@ html {
 header { /*id barra tambien es permitido*/
     display: flex; /*agrupar elementos de manera horizontal*/
     align-items: center; /* Alinea el contenido verticalmente */
-    justify-content: flex-start;  /* Alinea el contenido a la izquierda */
+    justify-content: flex-start;  /* Alinea el contenido a la derecha */
     color: #00d5a0;
     z-index: 10; /*encima del fondo*/
     margin-left: 50px;
 }
 
+.acciones{
+  margin-left: auto;
+  padding-right: 50px;
+}
 /*Contenido de Navegacion*/
+.acciones ul { /*Estilo a las listas*/
+  display: flex; /*elemntos en horizontal*/
+  list-style: none; /*Eliminar los puntos en las lista*/
+  gap: 20px; /*Espacio entre elementos*/
+  color: white; /*color a la lista*/
+}
 
-.acciones {
-  color: white;
-  flex-direction: column-reverse;
-  /*position: fixed; - esto en en verical*/ 
-  display:grid; /*qhace que los elementos se alinien en horizontal*/
-  margin-right: 30px;
-  margin-left: 1200px;
-    
+.acciones li { /*Estilos para el contenido de las listas*/
+  display: flex;
+  align-items: center;
 }
 
 /*boton de registro*/
-.registro {
+.registro button {
   color: white;
   background-color: #282828;
   border-radius: 5px;
-  /*border-color: aquamarine;*/
-}
-.registro:active { /*al precionar*/
-  color: #000;
-  background-color: #00d5a0;
+  padding: 10px 10px; /*Espacio en el elemento*/
+  border-color: #ffffff;
+  border-radius: 10px;
+  transition: background-color 0.5s, color 0.5s;
 }
 
-.registro:hover {
-  color: black;
+.registro button:active { /*al precionar*/
+  color: #ffffff;
+  background-color: #282828;
+}
+
+.registro button:hover {
+  color: rgb(3, 3, 3);
   background-color: #85ecd3;
 }
 
@@ -83,7 +92,6 @@ header { /*id barra tambien es permitido*/
   margin: 0; /* Elimina márgenes predeterminados del párrafo */
   padding: 0; /* Elimina relleno predeterminado */
   align-content: center; /*Alineacion del texto*/
-  display: flex;
   flex-flow: row wrap;
   font-size: 50px;
 }
@@ -95,17 +103,16 @@ header { /*id barra tambien es permitido*/
   margin-right: 50px; /*Margenes a la derecha*/
 }
 
-
-
 .boton_citas {
   width: 350px;
   height: 80px;
   color: #000;
   font-size: 40px;
   align-items: start;
-  border-radius: px;
+  border-radius: 10px;
   font-family: 'Abel', sans-serif;
   background: rgba(245, 246, 248, 0.75);
+  transition: background-color 0.5s, color 0.5s;
   /*border: 2px solid #00d5a0*/
 } /*configuracion inicial del boton*/
 
@@ -121,9 +128,6 @@ background-color: #85ecd3;
 
 .colaboracion {
   color: white;
-}
-
-.colaboracion {
   padding-right: 50px;
   padding-left: 50px;
   font-size: 20px;
@@ -135,4 +139,5 @@ background-color: #85ecd3;
 
 hr {
   color: #00d5a0;
+  /*margin: 50px;*/
 }
