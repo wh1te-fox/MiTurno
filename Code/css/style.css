@@ -141,3 +141,23 @@ hr {
   color: #00d5a0;
   /*margin: 50px;*/
 }
+
+.colaboracion p {
+  font-family: 'Almarai', sans-serif;
+  font-size: 25px;
+}
+
+.box_text p {
+  color: white;
+  border: #00d5a0;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+ .box_text img {
+  width: 10 px;
+  height: 50 px;
+  background-image: none, url(../html/img/tec.png)
+  
+  
+ }
