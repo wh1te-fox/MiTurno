@@ -11,6 +11,13 @@ html {
     background-size: 200px 200px; /*amplitud*/
 }
 
+html.white-theme {
+  background-color: white;
+  color: black;
+
+}
+
+
 /*Barra de navegacion*/
 
 header { /*id barra tambien es permitido*/
@@ -19,12 +26,13 @@ header { /*id barra tambien es permitido*/
     justify-content: flex-start;  /* Alinea el contenido a la derecha */
     color: #00d5a0;
     z-index: 10; /*encima del fondo*/
-    margin-left: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .acciones{
   margin-left: auto;
-  padding-right: 50px;
+  padding-right: 5%;
 }
 /*Contenido de Navegacion*/
 .acciones ul { /*Estilo a las listas*/
@@ -109,10 +117,8 @@ header { /*id barra tambien es permitido*/
 /*Margenes de texto*/
 .box {
   font-size: 40px;
-  margin-left: 50px; /*Margenes a la izquierda*/
-  margin-right: 50px; /*Margenes a la derecha*/
-  /*margin-left: 10%;
-  margin-right: 10%;*/
+  margin-left: 5%; /*Margenes a la izquierda*/
+  margin-right: 5%x; /*Margenes a la derecha*/
 }
 
 .boton_citas {
