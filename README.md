@@ -8,6 +8,7 @@
 </p>
 
 ![Status](https://img.shields.io/badge/status-in--development-blue) 
+![License GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
 
 
@@ -54,4 +55,4 @@ MiTurno
 
 Licencia
 
-Este proyecto está bajo la Licencia GPL-3.0 - ver el archivo [LICENSE](https://github.com/wh1te-fox/MiTurno=GPL-3.0-1-ov-file) para más detalles.
+Este proyecto está bajo la Licencia GPL-3.0 - ver el archivo [LICENSE](https://github.com/wh1te-fox/MiTurno/blob/main/LICENSE) para más detalles.
