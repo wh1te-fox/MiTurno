@@ -39,6 +39,16 @@ header { /*id barra tambien es permitido*/
   align-items: center;
 }
 
+.acciones a {
+  color: white;
+  text-decoration: none;
+}
+
+.acciones a:hover {
+  color: #00d5a0;
+  
+}
+
 /*boton de registro*/
 .registro button {
   color: white;
@@ -101,6 +111,8 @@ header { /*id barra tambien es permitido*/
   font-size: 40px;
   margin-left: 50px; /*Margenes a la izquierda*/
   margin-right: 50px; /*Margenes a la derecha*/
+  /*margin-left: 10%;
+  margin-right: 10%;*/
 }
 
 .boton_citas {
@@ -161,3 +173,9 @@ hr {
   
   
  }
+
+ .acciones li:hover {
+  color: #00d5a0;
+  transition: background-color 0.5s, color 0.5s;
+ }
+
