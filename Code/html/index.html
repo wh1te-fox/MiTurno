@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=devise-width, initial-scale=1.0" > <!--Identifica el dispositivo-->
   <title>Mi Turno</title>
   <link rel="stylesheet" href="../css/style.css"> <!-- Inyectar CSS -->
 </head>
@@ -17,11 +18,13 @@
     <!-- Menú de navegación opcional-->
     <nav class="acciones">
         <ul>
-        <li>Inicio</li>
+        <li>
+          <a href="index.html">Inicio</a>
+        </li>
         <li>Acerca de</li>
         <li>Contactanos</li>
         <li class="registro">
-          <button>Regístrate</button>
+          <button onclick="location.href='login.html'">Regístrate</button>
         </li>
         </ul>
     </nav>
@@ -45,7 +48,7 @@
       </div>
 
       <div>
-        <button class="boton_citas">Hacer cita</button>
+        <button class="boton_citas" onclick="location.href='form.html'">Hacer cita</button>
       </div>
     </div>
   </div>
@@ -74,3 +77,5 @@
 </body>
 
 </html>
+
+<!--nota para el siquiente cambio, eleccion de lenguaje-->
