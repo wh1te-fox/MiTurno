@@ -8,15 +8,8 @@ html {
     background-color: #282828; /*color de fondo*/
     background-repeat: no-repeat;
     background-attachment: scroll; /*desaparecer en el scroll*/
-    background-size: 200px 200px; /*amplitud*/
+    background-size: 100% 100%; /*amplitud*/
 }
-
-html.white-theme {
-  background-color: white;
-  color: black;
-
-}
-
 
 /*Barra de navegacion*/
 
@@ -63,32 +56,35 @@ header { /*id barra tambien es permitido*/
   background-color: #282828;
   border-radius: 5px;
   padding: 10px 10px; /*Espacio en el elemento*/
-  border-color: #ffffff;
+  border-color: #02ffb3;
   border-radius: 10px;
-  transition: background-color 0.5s, color 0.5s;
+  transition: background-color 3s, color 3;
 }
 
 .registro button:active { /*al precionar*/
-  color: #ffffff;
+  color: #02ffb3;
   background-color: #282828;
 }
 
 .registro button:hover {
-  color: rgb(3, 3, 3);
-  background-color: #85ecd3;
+  color: rgb(255, 255, 255);
+  background-color: #282828;
+  border-color: #007e59;
 }
 
 /*Contenido de la web*/
 .des1 {
   font-size: 30px;
   text-align: start; /*posicion*/
-  padding-right: 500pt;
+  padding-right: 15%;
+  padding-right: 15%;
   font-family: 'Almarai', sans-serif;
 }
 
 .des2 {
+  text-align: start;
   font-size: 30px;
-  padding-right: 500pt;
+  padding-right: 5%;
   font-family: 'Abel', sans-serif;
 }
 
@@ -102,8 +98,8 @@ header { /*id barra tambien es permitido*/
   background-repeat: no-repeat;
   background-size: cover; /* Esto hace que la imagen cubra todo el elemento */
   background-position: center; /* Centra la imagen */
-  width: 100vw; 
-  height: 100vh;
+  width: 100%; 
+  height: 100vh; /*todo el espacio del navegador*/
   display: flex; /* Necesario para align-items y justify-content */
   align-items: center;
   justify-content: center;
@@ -111,7 +107,7 @@ header { /*id barra tambien es permitido*/
   padding: 0; /* Elimina relleno predeterminado */
   align-content: center; /*Alineacion del texto*/
   flex-flow: row wrap;
-  font-size: 50px;
+  font-size: 14%;
 }
 
 /*Margenes de texto*/
@@ -134,11 +130,30 @@ header { /*id barra tambien es permitido*/
   /*border: 2px solid #00d5a0*/
 } /*configuracion inicial del boton*/
 
+.boton_lugares li {
+  width: 200px;
+  height: 70px;
+  color: #ffffff;
+  font-size: 40px;
+  border-radius: 10px;
+  font-family: 'Abel', sans-serif;
+  background: #282828;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+
+.boton_lugares li:hover{
+  border-color: #00d5a0;
+  color: #00d5a0;
+}
+
+
 .boton_citas:hover {
 color: rgb(3, 3, 3);
 background-color: #85ecd3;
 } /*Al poner el cursor*/
 
+.boton_lugares:active,
 .boton_citas:active {
   color: rgb(0, 0, 0);
   background-color: #00d5a0;
@@ -146,53 +161,83 @@ background-color: #85ecd3;
 
 .colaboracion {
   color: white;
-  padding-right: 50px;
-  padding-left: 50px;
-  font-size: 20px;
+  padding-right: 5%;
+  padding-left: 5%;
+  font-size: 100%;
+  font-family: 'Abel', sans-serif;
+  text-align: center;
+  
 }
 
 .creditos {
   color: #7a7979;
 }
 
-hr {
+/*hr {
   color: #00d5a0;
-  /*margin: 50px;*/
+  /*margin: 50px;*
 }
-
+*/
 .colaboracion p {
   font-family: 'Almarai', sans-serif;
   font-size: 25px;
 }
 
-.box_text p {
-  color: white;
-  border: #00d5a0;
-  padding-left: 15px;
-  padding-right: 15px;
-
-}
- .box_text img {
-  width: 10 px;
-  height: 50 px;
-  background-image: none, url(../html/img/tec.png)
-  
-  
- }
-
- .acciones li:hover {
+.acciones li:hover {
   color: #00d5a0;
   transition: background-color 0.5s, color 0.5s;
  }
 
  /* Diseno reponsivo */
- @media (max-width: 768px) {
+ @media (max-width: 768px) { /*media query*/
 
-  .acciones{
-    flex-direction: column;
+  header {
+    padding: 5% 5%;
   }
+
+  .header img {
+    max-width: 50px;
+  }
+
+  .header h1 {
+    font-size: x-small;
+  }
+
+  .acciones ul{
+    font-size: x-small;
+  }
+
+  .boton_citas {
+    height: min-content;
+    width: min-content;
+  }
+  
+  .registro button {
+    padding: 5px 10px; /*size del boton*/
+  }
+  
   .seccion {
     flex-direction: column;
-    padding: 10px;
+    padding: 1% 1%;
+    font-size: 1rem;
+    padding: 5% 5%;
+    text-align: center;
+  }
+
+  .des1, .des2 {
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 10%;
+  }
+  .boton_citas {
+    padding: 4px 20px;
+    font-size: small;
+  }
+
+  .colaboracion h1, p {
+        text-align: center;
+    font-size: 1rem;
+    padding: 0 10%;
+
   }
  }
