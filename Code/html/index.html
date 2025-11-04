@@ -3,17 +3,22 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=devise-width, initial-scale=1.0" > <!--Identifica el dispositivo-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Identifica el dispositivo-->
   <title>Mi Turno</title>
   <link rel="stylesheet" href="../css/style.css"> <!-- Inyectar CSS -->
+  <script src="../js/display.js"></script>
 </head>
 
 <body> <!-- Cuerpo o contenido general -->
 
   <!-- Encabezado -->
   <header class="header">
-    <img src="img/logoMI.png" alt="logo" width="70" />
-    <h1>Mi Turno</h1>
+    <img src="img/logoMI.png" alt="logo" width="75" />
+    <div class="head">
+      <h1>Mi Turno</h1>
+      <p>Tu salud, nuestra prioridad</p>
+    </div>
+
 
     <!--Cambio de tema-->
     <!--<div class="switch-container">
@@ -23,16 +28,19 @@
 
     <!-- Menú de navegación opcional-->
     <nav class="acciones">
-        <ul>
-        <li>
-          <a href="index.html">Inicio</a>
-        </li>
-        <li>Acerca de</li>
-        <li>Contactanos</li>
+      <!-- Botón de menú con imagen -->
+      <button class="menu-toggle" id="menu-toggle">
+        <img src="img/bar.png" alt="Menú" />
+      </button>
+
+      <ul id="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contáctanos</a></li>
         <li class="registro">
           <button onclick="location.href='login.html'">Regístrate</button>
         </li>
-        </ul>
+      </ul>
     </nav>
   </header>
 
@@ -40,51 +48,54 @@
   <div class="seccion">
     <div class="box">
       <div class="des1">
-        <h1>
-          Conectamos a profesionales de la salud con sus pacientes
-          de manera eficiente
-        </h1>
+        <h1>Tu salud, sin esperas.</h1>
       </div>
-
       <div class="des2">
-        <p>
-          Agenda, administra y consulta tus turnos fácilmente,
-          organizando una experiencia de salud sin complicaciones.
-        </p>
+        <p>Agenda, administra y consulta tus turnos fácilmente, organizando una experiencia de salud sin complicaciones.</p>
       </div>
-
       <div>
         <button class="boton_citas" onclick="location.href='form.html'">Hacer cita</button>
       </div>
     </div>
   </div>
 
-  <hr /> <!-- Línea divisoria -->
+  <!-- Beneficios -->
+  <div class="beneficios">
+    <div class="Registrate">
+      <h1>Regístrate</h1>
+      <p>Crea tu perfil en minutos con tus datos personales y médicos. Toda tu información está protegida y segura.</p>
+    </div>
 
-  <!-- Colaboración -->
-  <div class="colaboracion">
-    <h1>"Confianza y colaboración"</h1>
-    <p>
-      "Construimos relaciones de confianza con nuestros colaboradores. Nos asociamos 
-      con centros de salud y profesionales para ofrecer una experiencia fluida y segura 
-      a sus pacientes.Con nuestra plataforma, optimizarás tus procesos, mejorarás la
-      satisfacción del cliente y te centrarás en lo que realmente importa: brindar una atención
-      de calidad."
-    </p>
-    <button class="boton_lugares" onclick="location.href='form.html'">
-      Ver Lugares
-    </button>
+    <hr>
+
+    <div class="cita">
+      <h1>Agenda tu cita</h1>
+      <p>Crea tu perfil en minutos con tus datos personales y médicos. Toda tu información está protegida y segura.</p>
+    </div>
+
+    <hr>
+
+    <div class="digital">
+      <h1>Recibe tu receta digital</h1>
+      <p>Crea tu perfil en minutos con tus datos personales y médicos. Toda tu información está protegida y segura.</p>
+    </div>
   </div>
+
+  <div>
+    <button class="boton_lugares" onclick="location.href='form.html'">Regístrate ahora!</button>
+  </div>
+
+  <hr>
 
   <!-- Pie de página -->
   <footer>
     <div class="creditos">
-      <p>Política de Privacidad</p>
+      <h1>Mi Turno</h1>
+      <p align="center">Política de Privacidad</p>
     </div>
   </footer>
 
 </body>
-
 </html>
 
 <!--nota para el siquiente cambio, eleccion de lenguaje-->
