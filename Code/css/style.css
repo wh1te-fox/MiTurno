@@ -1,41 +1,72 @@
 /*Importacion de tipografias*/
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Almarai:wght@300;400;700;800&display=swap');
 
 /*estilo, pagina principal*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
-    background-color: #282828; /*color de fondo*/
-    background-repeat: no-repeat;
-    background-attachment: scroll; /*desaparecer en el scroll*/
-    background-size: 100% 100%; /*amplitud*/
+  background-color: #282828; /*color de fondo*/
+  background-repeat: no-repeat;
+  background-attachment: scroll; /*desaparecer en el scroll*/
+  max-width: 100%; /*amplitud*/
 }
 
 /*Barra de navegacion*/
-
-header { /*id barra tambien es permitido*/
-    display: flex; /*agrupar elementos de manera horizontal*/
-    align-items: center; /* Alinea el contenido verticalmente */
-    justify-content: flex-start;  /* Alinea el contenido a la derecha */
-    color: #00d5a0;
-    z-index: 10; /*encima del fondo*/
-    margin-left: 5%;
-    margin-right: 5%;
+header {
+  display: flex; /*agrupar elementos de manera horizontal*/
+  align-items: center; /*alineacion vertical*/
+  justify-content: flex-start; /*alineacion horizontal*/
+  color: #00d5a0;
+  z-index: 10;
+  margin: 1% 5%;
 }
 
-.acciones{
+.head p {
+  color: #959595;
+}
+
+/* Contenedor del texto */
+.head p {
+  overflow: hidden;              /* Oculta el texto mientras se “escribe” */
+  border-right: 0.15em solid #00ffae;  /* Simula el cursor */
+  white-space: nowrap;           /* Evita que el texto salte de línea */
+  letter-spacing: 0.1em;
+  animation: typing 4s steps(30, end), blink 0.7s step-end infinite;
+}
+
+/* Animación de escritura */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Parpadeo del cursor */
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+hr {
+  color: white;
+}
+
+.acciones {
   margin-left: auto;
   padding-right: 5%;
 }
+
 /*Contenido de Navegacion*/
-.acciones ul { /*Estilo a las listas*/
-  display: flex; /*elemntos en horizontal*/
-  list-style: none; /*Eliminar los puntos en las lista*/
-  gap: 20px; /*Espacio entre elementos*/
-  color: white; /*color a la lista*/
+.acciones ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: white;
 }
 
-.acciones li { /*Estilos para el contenido de las listas*/
+.acciones li {
   display: flex;
   align-items: center;
 }
@@ -43,41 +74,39 @@ header { /*id barra tambien es permitido*/
 .acciones a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
-.acciones a:hover {
+.acciones a:hover,
+.acciones li:hover {
   color: #00d5a0;
-  
+  transition: color 0.5s;
 }
 
 /*boton de registro*/
 .registro button {
   color: white;
   background-color: #282828;
-  border-radius: 5px;
-  padding: 10px 10px; /*Espacio en el elemento*/
-  border-color: #02ffb3;
+  border: 2px solid #02ffb3;
   border-radius: 10px;
-  transition: background-color 3s, color 3;
-}
-
-.registro button:active { /*al precionar*/
-  color: #02ffb3;
-  background-color: #282828;
+  padding: 10px;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .registro button:hover {
-  color: rgb(255, 255, 255);
-  background-color: #282828;
-  border-color: #007e59;
+  color: white;
+  border-color: #02ffb3ae;
+}
+
+.registro button:active {
+  color: #6f6f6f;
 }
 
 /*Contenido de la web*/
 .des1 {
   font-size: 30px;
-  text-align: start; /*posicion*/
-  padding-right: 15%;
-  padding-right: 15%;
+  text-align: start;
+  padding-right: 10%;
   font-family: 'Almarai', sans-serif;
 }
 
@@ -90,31 +119,27 @@ header { /*id barra tambien es permitido*/
 
 /*fondo principal*/
 .seccion {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-  rgba(0, 0, 0, 0.5)), /* Degradado semitransparente */
-    url(../html/img/found.png);
-  color: white;
-
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../html/img/found.png);
   background-repeat: no-repeat;
-  background-size: cover; /* Esto hace que la imagen cubra todo el elemento */
-  background-position: center; /* Centra la imagen */
-  width: 100%; 
-  height: 100vh; /*todo el espacio del navegador*/
-  display: flex; /* Necesario para align-items y justify-content */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0; /* Elimina márgenes predeterminados del párrafo */
-  padding: 0; /* Elimina relleno predeterminado */
-  align-content: center; /*Alineacion del texto*/
   flex-flow: row wrap;
-  font-size: 14%;
 }
 
-/*Margenes de texto*/
+.seccion h1, p {
+  gap: 10%;
+  margin-bottom: 3%; /*margenes de arriba y abajo*/
+}
+
 .box {
-  font-size: 40px;
-  margin-left: 5%; /*Margenes a la izquierda*/
-  margin-right: 5%x; /*Margenes a la derecha*/
+  font-size: 35px;
+  margin: 0 5%;
 }
 
 .boton_citas {
@@ -122,77 +147,77 @@ header { /*id barra tambien es permitido*/
   height: 80px;
   color: #000;
   font-size: 40px;
-  align-items: start;
   border-radius: 10px;
   font-family: 'Abel', sans-serif;
   background: rgba(245, 246, 248, 0.75);
   transition: background-color 0.5s, color 0.5s;
-  /*border: 2px solid #00d5a0*/
-} /*configuracion inicial del boton*/
+}
 
-.boton_lugares li {
-  width: 200px;
-  height: 70px;
-  color: #ffffff;
-  font-size: 40px;
+.boton_citas:hover {
+  color: #030303;
+  background-color: #85ecd3;
+}
+
+.boton_lugares {
+  color: #fff;
+  font-size: 2rem;
   border-radius: 10px;
-  font-family: 'Abel', sans-serif;
   background: #282828;
   transition: background-color 0.5s, color 0.5s;
 }
 
-
-.boton_lugares li:hover{
+.boton_lugares:hover {
   border-color: #00d5a0;
   color: #00d5a0;
 }
 
-
-.boton_citas:hover {
-color: rgb(3, 3, 3);
-background-color: #85ecd3;
-} /*Al poner el cursor*/
-
-.boton_lugares:active,
-.boton_citas:active {
-  color: rgb(0, 0, 0);
+.boton_citas:active,
+.boton_lugares:active {
+  color: #000;
   background-color: #00d5a0;
-} /*al hacer click cambio de color*/
-
-.colaboracion {
-  color: white;
-  padding-right: 5%;
-  padding-left: 5%;
-  font-size: 100%;
-  font-family: 'Abel', sans-serif;
-  text-align: center;
-  
 }
 
+/*Beneficios*/
+.beneficios {
+  color: white;
+  background-color: #006753;
+  display: flex;
+  flex-direction: row;
+  padding: 5% 5%; /*altura espacio ancho espacio*/
+  gap: 20px;
+}
+
+.beneficios h1 {
+  font-family: 'Almarai', sans-serif;
+}
+
+.beneficios p {
+  font-family: 'Abel', sans-serif;
+  font-size: 1rem;
+}
+
+/*Pie de página*/
 .creditos {
   color: #7a7979;
+  justify-content: center;
 }
 
-/*hr {
-  color: #00d5a0;
-  /*margin: 50px;*
-}
-*/
-.colaboracion p {
-  font-family: 'Almarai', sans-serif;
-  font-size: 25px;
+.creditos h1 {
+  color: #02ffb3;
 }
 
-.acciones li:hover {
-  color: #00d5a0;
-  transition: background-color 0.5s, color 0.5s;
- }
-
- /* Diseno reponsivo */
- @media (max-width: 768px) { /*media query*/
+/* Diseno reponsivo */
+@media (max-width: 768px) {
+  html {
+    max-width: 100%;
+  }
 
   header {
-    padding: 5% 5%;
+    text-align: center;
+  }
+
+  .head p {
+    visibility: hidden;
   }
 
   .header img {
@@ -200,44 +225,73 @@ background-color: #85ecd3;
   }
 
   .header h1 {
-    font-size: x-small;
+    font-size: small;
   }
 
-  .acciones ul{
-    font-size: x-small;
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
-  .boton_citas {
-    height: min-content;
-    width: min-content;
+  .menu-toggle img {
+    width: 40px;
+    height: 40px;
   }
-  
-  .registro button {
-    padding: 5px 10px; /*size del boton*/
+
+  .acciones ul {
+    display: none;
+    flex-direction: column;
+    background-color: #009969;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 1rem;
   }
-  
+
+  .acciones ul.active {
+    display: flex;
+  }
+
+  .acciones li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
   .seccion {
     flex-direction: column;
-    padding: 1% 1%;
-    font-size: 1rem;
-    padding: 5% 5%;
     text-align: center;
+    padding: 5%;
+    font-size: 1rem;
   }
 
   .des1, .des2 {
     text-align: center;
     font-size: 1rem;
-    padding: 0 10%;
   }
+
   .boton_citas {
-    padding: 4px 20px;
+    width: 50%;
     font-size: small;
   }
 
-  .colaboracion h1, p {
-        text-align: center;
-    font-size: 1rem;
-    padding: 0 10%;
-
+  .beneficios {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 10%;
   }
- }
+
+  .beneficios p {
+    font-size: 100%;
+  }
+}
+
+/* En pantallas grandes */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
