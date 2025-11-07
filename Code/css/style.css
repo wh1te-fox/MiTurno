@@ -53,7 +53,7 @@ hr {
   color: white;
 }
 
-.acciones {
+.acciones { /*config para la alineacion derecha*/
   margin-left: auto;
   padding-right: 5%;
 }
@@ -147,7 +147,7 @@ hr {
   height: 80px;
   color: #000;
   font-size: 40px;
-  border-radius: 10px;
+  border-radius: 40px;
   font-family: 'Abel', sans-serif;
   background: rgba(245, 246, 248, 0.75);
   transition: background-color 0.5s, color 0.5s;
@@ -156,6 +156,13 @@ hr {
 .boton_citas:hover {
   color: #030303;
   background-color: #85ecd3;
+}
+
+.bton_c {
+  margin-top: 2%;
+  margin-block-end: 2%;
+  display: flex;
+  justify-content: center;
 }
 
 .boton_lugares {
@@ -183,7 +190,7 @@ hr {
   background-color: #006753;
   display: flex;
   flex-direction: row;
-  padding: 5% 5%; /*altura espacio ancho espacio*/
+  padding: 25% 5%; /*altura espacio ancho espacio*/
   gap: 20px;
 }
 
@@ -197,13 +204,25 @@ hr {
 }
 
 /*Pie de página*/
-.creditos {
+.mt {
   color: #7a7979;
   justify-content: center;
+  text-align: center;
+  padding: 2%;
 }
 
-.creditos h1 {
+.mt h1 {
   color: #02ffb3;
+}
+
+.foo {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  color: #959595;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
 }
 
 /* Diseno reponsivo */
@@ -286,6 +305,11 @@ hr {
 
   .beneficios p {
     font-size: 100%;
+  }
+
+  .foo {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
