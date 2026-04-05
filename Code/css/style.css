@@ -21,7 +21,7 @@ header {
   align-items: center; /*alineacion vertical*/
   justify-content: flex-start; /*alineacion horizontal*/
   color: #00d5a0;
-  z-index: 10;
+  z-index: 1000;
   margin: 1% 5%;
 }
 
@@ -146,7 +146,7 @@ hr {
   height: 80px;
   color: #000;
   font-size: 40px;
-  border-radius: 40px;
+  border-radius: 10px;
   font-family: 'Abel', sans-serif;
   background: rgba(245, 246, 248, 0.75);
   transition: background-color 0.5s, color 0.5s;
@@ -155,13 +155,6 @@ hr {
 .boton_citas:hover {
   color: #030303;
   background-color: #85ecd3;
-}
-
-.bton_c {
-  margin-top: 2%;
-  margin-block-end: 2%;
-  display: flex;
-  justify-content: center;
 }
 
 .boton_lugares {
@@ -206,8 +199,6 @@ hr {
 .mt {
   color: #7a7979;
   justify-content: center;
-  text-align: center;
-  padding: 2%;
 }
 
 .mt h1 {
@@ -223,7 +214,6 @@ hr {
   justify-content: center;
   padding: 1%;
 }
-
 /* Diseno reponsivo */
 @media (max-width: 768px) {
   html {
@@ -305,11 +295,12 @@ hr {
   .beneficios p {
     font-size: 100%;
   }
-
-  .foo {
-    flex-direction: column;
-    text-align: center;
-  }
+}
+.foo {
+  color: #6f6f6f;
+  display: grid;
+  flex-direction: column;
+  text-align: center;
 }
 
 .bton_c {
@@ -317,19 +308,11 @@ hr {
   justify-content: center;
 }
 
-
-.foo {
-  color: #6f6f6f;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  text-align: center;
-
-}
-
 .mt {
   color: #00d5a0;
   text-align: center;
 }
+
 
 /* En pantallas grandes */
 @media (min-width: 769px) {
