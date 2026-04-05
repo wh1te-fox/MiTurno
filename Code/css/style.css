@@ -127,9 +127,8 @@ hr {
   width: 100%;
   height: 100vh;
   display: flex;
+  padding: 1rem, 5rem;
   align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
 }
 
 .seccion h1, p {
@@ -217,7 +216,7 @@ hr {
   }
 
   .head p {
-    visibility: hidden;
+    display: none;
   }
 
   .header img {
@@ -225,7 +224,7 @@ hr {
   }
 
   .header h1 {
-    font-size: small;
+    font-size: large;
   }
 
   .menu-toggle {
@@ -287,6 +286,25 @@ hr {
   .beneficios p {
     font-size: 100%;
   }
+}
+
+.bton_c {
+  display: flex;
+  justify-content: center;
+}
+
+
+.foo {
+  color: #6f6f6f;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+
+}
+
+.mt {
+  color: #00d5a0;
+  text-align: center;
 }
 
 /* En pantallas grandes */
