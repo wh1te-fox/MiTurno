@@ -39,12 +39,19 @@ git clone git@github.com:wh1te-fox/MiTurno.git
 MiTurno
 ├─ Code
 │  ├─ css
+│  │  ├─ base.css
 │  │  └─ style.css
-│  └─ html
-│     ├─ img
-│     │  ├─ found.png
-│     │  └─ logoMI.png
-│     └─ index.html
+│  ├─ html
+│  │  ├─ form.html
+│  │  ├─ img
+│  │  │  ├─ bar.png
+│  │  │  ├─ found.png
+│  │  │  └─ logoMI.png
+│  │  ├─ index.html
+│  │  └─ login.html
+│  └─ js
+│     └─ display.js
+├─ LICENSE
 ├─ README.md
 └─ img
    └─ logoMI.png
