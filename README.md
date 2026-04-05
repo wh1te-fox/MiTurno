@@ -7,7 +7,7 @@
   alt = "logo"/>
 </p>
 
-![Status](https://img.shields.io/badge/status-in--development-blue) 
+![Status](https://img.shields.io/badge/status-slow-red) 
 ![License GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
 
