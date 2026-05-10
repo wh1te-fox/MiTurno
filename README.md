@@ -3,7 +3,7 @@
 
 <p align = "center">
   <img
-  src = "img/logoMI.png"
+  src = "vue-project/src/assets/logoMI.png"
   alt = "logo"/>
 </p>
 
