@@ -88,6 +88,13 @@ Desarrollar una plataforma que centralice la gestión de citas médicas y facili
 - Consultar auditorías.
 - Administrar configuraciones globales.
 
+### 3.5 Personal de recepción
+
+- Registrar y consultar pacientes.
+- Programar, reprogramar y cancelar citas según sus permisos.
+- Consultar disponibilidad médica.
+- Consultar agendas de su institución.
+
 ## 4. Requerimientos funcionales
 
 ### RF-01. Gestión de citas
@@ -545,7 +552,6 @@ La primera versión funcional deberá permitir:
 - Gestión de pacientes.
 - Gestión de hospitales.
 - Gestión de especialistas.
-- Gestión de servicios.
 - Disponibilidad horaria.
 - Creación de citas.
 - Cancelación de citas.
@@ -555,6 +561,7 @@ La primera versión funcional deberá permitir:
 
 ### P1 — Segunda fase
 
+- Gestión de servicios.
 - Notificaciones automáticas.
 - Recordatorios.
 - Ubicación geográfica.

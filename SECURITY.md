@@ -88,9 +88,12 @@ Implementar RBAC (Role-Based Access Control) con validaciones adicionales de pro
 Roles iniciales:
 
 - PATIENT
+- RECEPTIONIST
 - DOCTOR
 - INSTITUTION_ADMIN
 - SUPER_ADMIN
+
+Este conjunto es el canónico y debe coincidir con `SPEC.md` §3.2.
 
 ## 5.1 Restricciones por rol
 
@@ -111,6 +114,22 @@ No puede:
 - Modificar diagnósticos.
 - Administrar especialistas.
 - Modificar agendas institucionales.
+
+### RECEPTIONIST
+
+Puede:
+
+- Registrar y consultar pacientes.
+- Programar, reprogramar y cancelar citas según sus permisos.
+- Consultar disponibilidad médica.
+- Consultar agendas de su institución.
+
+No puede:
+
+- Administrar configuraciones globales.
+- Gestionar roles y permisos.
+- Modificar expedientes clínicos.
+- Acceder a instituciones fuera de su alcance.
 
 ### DOCTOR
 

@@ -136,14 +136,16 @@ La arquitectura tecnológica objetivo definida para MiTurno es:
 
 ### Frontend
 
-- React.
+- Vue 3 (Composition API y `<script setup lang="ts">`).
 - TypeScript.
 - Vite.
-- React Router.
-- TanStack Query.
-- React Hook Form.
+- Vue Router.
+- TanStack Vue Query.
+- VeeValidate.
 - Zod.
-- CSS Modules.
+- Tailwind CSS.
+
+No se utiliza React, JSX, React Router, React Hook Form ni CSS Modules. Esta sección debe mantenerse alineada con `ARCHITECTURE.md` §3.1, que es la referencia técnica obligatoria.
 
 ### Backend
 
@@ -373,7 +375,6 @@ MiTurno contempla una evolución progresiva.
 - Gestión de pacientes.
 - Gestión de instituciones.
 - Gestión de especialistas.
-- Gestión de servicios.
 - Disponibilidad horaria.
 - Gestión de citas.
 - Cancelación y reprogramación.
@@ -385,6 +386,7 @@ MiTurno contempla una evolución progresiva.
 - Recordatorios.
 - Mapas.
 - Geolocalización.
+- Gestión de servicios.
 - Reportes administrativos.
 - Lista de espera.
 - Agenda automática.

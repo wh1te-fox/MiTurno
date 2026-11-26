@@ -23,9 +23,9 @@ El sistema debe proporcionar:
 
 ## 2. Actores del sistema
 
-### ADMIN
+### SUPER_ADMIN
 
-Responsable de la administración general.
+Responsable de la administración general del sistema.
 
 Permisos:
 
@@ -34,6 +34,19 @@ Permisos:
 - Administrar hospitales.
 - Configurar especialidades.
 - Consultar auditorías.
+
+### INSTITUTION_ADMIN
+
+Responsable de la administración de una institución.
+
+Permisos:
+
+- Administrar el perfil de su institución.
+- Gestionar especialistas y agendas de su institución.
+- Consultar citas y reportes institucionales.
+- Gestionar usuarios institucionales autorizados.
+
+No puede acceder a otras instituciones ni modificar configuraciones globales.
 
 ### RECEPTIONIST
 
@@ -74,6 +87,10 @@ El acceso del paciente a la plataforma es una funcionalidad prevista, no debe co
 
 ## 3. Modelo de base de datos
 
+Este modelo corresponde al alcance del MVP definido en `PRD.md` §10: 10 tablas.
+
+Quedan diferidos a fases posteriores (P1/P2): servicios clínicos, ubicaciones geográficas, expedientes clínicos, notificaciones, lista de espera y reportes. No deben crearse sus tablas hasta que se apruebe formalmente su incorporación al esquema.
+
 ### 3.1 Tabla: hospitals
 
 Representa los centros hospitalarios.
@@ -102,12 +119,23 @@ Define los roles del sistema.
 
 Roles iniciales:
 
-- ADMIN
+- SUPER_ADMIN
+- INSTITUTION_ADMIN
 - RECEPTIONIST
 - DOCTOR
 - PATIENT
 
-Los permisos deben verificarse en el backend. El nombre del rol por sí solo no sustituye las comprobaciones de autorización.
+Correspondencia con los actores descritos en `PRD.md` §3:
+
+| Rol | Actor |
+|---|---|
+| SUPER_ADMIN | Administrador general |
+| INSTITUTION_ADMIN | Administrador institucional |
+| RECEPTIONIST | Personal de recepción |
+| DOCTOR | Médico |
+| PATIENT | Paciente |
+
+Los permisos deben verificarse en el backend. El nombre del rol por sí solo no sustituye las comprobaciones de autorización. Este conjunto de roles es el canónico y debe coincidir con `SECURITY.md` §5.
 
 ### 3.3 Tabla: users
 
@@ -241,7 +269,7 @@ Es la entidad central del sistema.
 |---|---|---|
 | id | UUID | PK |
 | patient_id | UUID | FK |
-| professional_id | UUID | FK |
+| professional_id | UUID | FK, NULL |
 | hospital_id | UUID | FK |
 | created_by | UUID | FK users |
 | starts_at | TIMESTAMPTZ | NOT NULL |
@@ -266,10 +294,11 @@ Reglas:
 
 - ends_at debe ser posterior a starts_at.
 - El paciente debe existir.
-- El profesional debe estar activo.
+- `professional_id` puede ser NULL únicamente cuando `status = 'PENDING'`. En cualquier otro estado es obligatorio.
+- Cuando `professional_id` esté definido, el profesional debe estar activo.
 - El hospital debe estar activo.
-- La especialidad del profesional debe corresponder a la configuración de disponibilidad.
-- Una cita activa no puede superponerse con otra cita activa del mismo profesional.
+- Cuando `professional_id` esté definido, la especialidad del profesional debe corresponder a la configuración de disponibilidad.
+- Una cita activa con `professional_id` asignado no puede superponerse con otra cita activa del mismo profesional.
 - No se puede modificar una cita completada como si fuera una cita pendiente.
 - Las cancelaciones deben conservarse en el historial.
 - Toda reprogramación debe dejar trazabilidad.
@@ -281,7 +310,7 @@ Se consideran ocupados los siguientes estados:
 - CONFIRMED
 - IN_PROGRESS
 
-Los estados CANCELLED, COMPLETED y NO_SHOW no bloquean nuevas reservas.
+Una cita `PENDING` sin `professional_id` no bloquea la agenda de ningún profesional, porque la restricción de exclusión ignora las filas con `professional_id` NULL. Los estados CANCELLED, COMPLETED y NO_SHOW no bloquean nuevas reservas.
 
 La política definitiva de transición de estados debe centralizarse en AppointmentService.
 
@@ -390,6 +419,16 @@ WHERE (
 Esta restricción evita reservas simultáneas para el mismo profesional, incluso ante solicitudes concurrentes.
 
 La instalación y migración de la extensión deben verificarse en el entorno PostgreSQL.
+
+Además, debe garantizarse que el profesional esté asignado salvo en estado PENDING:
+
+```sql
+ALTER TABLE appointments
+ADD CONSTRAINT appointments_professional_required
+CHECK (status = 'PENDING' OR professional_id IS NOT NULL);
+```
+
+Esta restricción es compatible con la exclusión GiST: las filas con `professional_id` NULL no participan en la comparación de solapamientos.
 
 Si se necesita impedir también la duplicación de pacientes en un mismo horario, esa regla deberá definirse expresamente y añadirse como una restricción independiente.
 
