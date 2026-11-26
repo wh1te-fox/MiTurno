@@ -1,18 +1,16 @@
 <script setup>
-import MyButton from './components/main_button.vue'
-import main_header from './components/hearder.vue';
+import { ref } from 'vue'
+import AppHeader from '@/components/AppHeader.vue'
+import HomeView from '@/views/HomeView.vue'
+import BookingModal from '@/components/BookingModal.vue'
+
+const isBookingOpen = ref(false)
 </script>
 
-
 <template>
-
-  <main_header/>
-
-  <!-- Pasando el parámetro "buttonText" -->
-  <MyButton buttonText="Enviar Formulario" />
-  <MyButton buttonText="Guardar" />
-
-  
-  
+  <div class="min-h-screen bg-white flex flex-col font-sans">
+    <AppHeader @open-booking="isBookingOpen = true" />
+    <HomeView />
+    <BookingModal :isOpen="isBookingOpen" @close="isBookingOpen = false" />
+  </div>
 </template>
-
